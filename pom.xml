@@ -28,11 +28,18 @@
     </scm>
     <properties>
         <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webservices</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
         </dependency>
 
         <dependency>
@@ -42,8 +49,10 @@
         </dependency>
 
         <dependency>
-            <groupId>wsdl4j</groupId>
-            <artifactId>wsdl4j</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -57,7 +66,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>4.0.0</version>
                 <executions>
                     <execution>
                         <id>xjc</id>
@@ -68,7 +77,7 @@
                 </executions>
                 <configuration>
                     <sources>
-                        <source>src/main/resources/calculator.xsd</source>
+                        <source>${project.basedir}/src/main/resources/calculator.xsd</source>
                     </sources>
                 </configuration>
             </plugin>

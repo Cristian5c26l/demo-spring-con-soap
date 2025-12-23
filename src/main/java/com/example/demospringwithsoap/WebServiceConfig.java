@@ -35,7 +35,7 @@ public class WebServiceConfig {
         return wsdl11Definition;
     }
 
-    // 3. Carga tu archivo XSD
+    // 3. Carga archivo XSD
     @Bean
     public XsdSchema calculatorSchema() {
         return new SimpleXsdSchema(new ClassPathResource("calculator.xsd"));
