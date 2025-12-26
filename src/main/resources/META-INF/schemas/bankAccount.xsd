@@ -1,0 +1,30 @@
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://example.com/demospringwithsoap"
+        targetNamespace="http://example.com/demospringwithsoap"
+        elementFormDefault="qualified"
+>
+    <xs:element name="getBankAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNumber" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBankAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bankAccount" type="tns:bankAccount"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="bankAccount">
+        <xs:sequence>
+            <xs:element name="accountNumber" type="xs:string" />
+            <xs:element name="accountHolder" type="xs:string" />
+            <xs:element name="balance" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
